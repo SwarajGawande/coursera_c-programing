@@ -1,0 +1,8 @@
+Grading at Sat May 16 14:53:40 UTC 2020
+Attempting to compile maxSeq.c 
+gcc: error: maxSeq.c: No such file or directory
+gcc: fatal error: no input files
+compilation terminated.
+The code did not compile!
+
+Overall Grade: F
