@@ -3,15 +3,15 @@
 #include <string.h>
 
 void reverse(char * str) {
-  char strans[100];
+  char strans[200];
   int i=0;
   while (str[i]!='\0'){
-    strans[99-i]=str[i];
+    strans[199-i]=str[i];
     i++;
   }
   int j = 0;
   while (str[j]!='\0'){
-    str[j]=strans[100-i+j];
+    str[j]=strans[200-i+j];
     j++;
   }
 }
