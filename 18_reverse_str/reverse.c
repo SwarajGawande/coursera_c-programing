@@ -3,20 +3,22 @@
 #include <string.h>
 
 void reverse(char * str) {
-  if (*str=='\0'){
+  if (str==NULL){
+    return;
   }
   else{
-  int i=0;
-  while (str[i]!='\0'){
-    i++;
-  }
-  char dest[i];
-  strncpy(dest,str,i);
-  int j = 0;
-  while (str[j]!='\0'){
-    str[j]=dest[i-j-1];
-    j++;
-  }
+    int i=0;
+    while (str[i]!='\0'){
+      i++;
+    }
+    char dest[i];
+    strncpy(dest,str,i);
+    int j = 0;
+    while (str[j]!='\0'){
+      str[j]=dest[i-j-1];
+      j++;
+    }
+    return;
   }
 }
   
