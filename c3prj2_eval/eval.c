@@ -169,16 +169,16 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
   }
   if (hand1_eval.ranking==hand2_eval.ranking){
     int i=0;
-    while((*(hand1_eval.cards[i])).value==(*(hand2_eval.cards[i])).value
-	  &&(*(hand1_eval.cards[i])).suit==(*(hand2_eval.cards[i])).suit&&i<4){
+    while((*(hand1_eval.cards[i])).value==(*(hand2_eval.cards[i])).value&&i<4){
+      //&&(*(hand1_eval.cards[i])).suit==(*(hand2_eval.cards[i])).suit&&i<4){
       i=i+1;
     }
     if ((*(hand1_eval.cards[i])).value!=(*(hand2_eval.cards[i])).value){
       return (*(hand1_eval.cards[i])).value-(*(hand2_eval.cards[i])).value;
     }
-    if ((*(hand1_eval.cards[i])).value==(*(hand2_eval.cards[i])).value){
-      return (*(hand1_eval.cards[i])).suit-(*(hand2_eval.cards[i])).suit;
-    }
+    //if ((*(hand1_eval.cards[i])).value==(*(hand2_eval.cards[i])).value){
+      //return (*(hand1_eval.cards[i])).suit-(*(hand2_eval.cards[i])).suit;
+      // }
   }
   return 0;
 }
