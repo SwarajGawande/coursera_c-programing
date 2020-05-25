@@ -71,7 +71,7 @@ int helper1(deck_t *hand,size_t index){
       i=i+1;
       continue;
     }
-    if(j==4&&(*((*hand).cards[0])).value==14&&(*((*hand).cards[0])).value==2){
+    if(j==4&&(*((*hand).cards[0])).value==14&&(*((*hand).cards[i])).value==2){
       return -1;
     }
     return j;
