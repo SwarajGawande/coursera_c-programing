@@ -177,7 +177,7 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
       return (*(hand1_eval.cards[i])).value-(*(hand2_eval.cards[i])).value;
     }
     if ((*(hand1_eval.cards[i])).value==(*(hand2_eval.cards[i])).value){
-      return (*(hand2_eval.cards[i])).suit-(*(hand1_eval.cards[i])).suit;
+      return (*(hand1_eval.cards[i])).suit-(*(hand2_eval.cards[i])).suit;
     }
   }
   return 0;
