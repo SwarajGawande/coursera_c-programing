@@ -71,13 +71,22 @@ int helper1(deck_t *hand,size_t index){
       i=i+1;
       continue;
     }
-    if(j==4&&(*((*hand).cards[i+1])).value==14&&(*((*hand).cards[i])).value==2){
+    if(j==4&&(*((*hand).cards[0])).value==14&&(*((*hand).cards[0])).value==2){
       return -1;
     }
     return j;
   }
   return j;
 }
+int contains_req_ace(deck_t *hand,suit_t fs){
+  for (int i=0;i<hand->n_cards;i++){
+    if (((*((*hand).cards[i])).value==14)&&(*((*hand).cards[i])).suit==fs){
+      return 0;
+    }
+  }
+  return -2;
+}
+
 int helper2(deck_t *hand,size_t index,suit_t fs){
   int i= index;
   int j=1;
@@ -96,7 +105,7 @@ int helper2(deck_t *hand,size_t index,suit_t fs){
       i=i+1;
       continue;
     }
-    if(j==4&&(*((*hand).cards[i+1])).value==14&&(*((*hand).cards[i+1])).suit==fs&&(*((*hand).cards[i])).value==2){
+    if(j==4&&contains_req_ace(hand,fs)==0&&(*((*hand).cards[i])).value==2){
       return -1;
     }
     return j;
