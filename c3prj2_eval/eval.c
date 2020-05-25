@@ -46,6 +46,7 @@ size_t get_match_index(unsigned * match_counts, size_t n,unsigned n_of_akind){
       return i;
     }
   }
+  printf("Error! could not find index  for n_of_akind\n");
   return 0;
 }
 ssize_t  find_secondary_pair(deck_t * hand, unsigned * match_counts, size_t match_idx) {
