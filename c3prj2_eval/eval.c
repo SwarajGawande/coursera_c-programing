@@ -134,7 +134,7 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
   }
   if (fs!=NUM_SUITS&&(*((*hand).cards[index])).value==5&&(*((*hand).cards[index])).suit==fs){
     int i = helper2(hand,index,fs);
-    if (index==i-3&&(*((*hand).cards[i+1])).value==14&&(*((*hand).cards[i+1])).suit==fs){
+    if (i==-1){
       return -1;
     }
   }
