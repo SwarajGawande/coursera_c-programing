@@ -1,4 +1,4 @@
-Grading at Tue May 26 04:30:45 UTC 2020
+Grading at Tue May 26 04:36:00 UTC 2020
 Attempting to compile numToBits.c
 Your file matched the expected output
 Your output matched what we expected
