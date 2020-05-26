@@ -119,6 +119,7 @@ int check_ace_low(deck_t *hand,size_t index,suit_t fs){
       return 0;
     }
   }
+  }
   return -1;
 }
 
