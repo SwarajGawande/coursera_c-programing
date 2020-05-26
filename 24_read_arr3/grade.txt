@@ -1,7 +1,8 @@
-Grading at Tue May 26 04:30:49 UTC 2020
+Grading at Tue May 26 04:36:05 UTC 2020
 I expected to find a file called 'answer.txt' but it did not exist
 (or was not a regular file)
 Here are the files that I can find:
+grade.txt
 README
 test.c
 Your output did not match what we expected.
