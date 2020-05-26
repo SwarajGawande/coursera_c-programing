@@ -120,6 +120,13 @@ int check_ace_low(deck_t *hand,size_t index,suit_t fs){
     }
   }
   }
+  if (fs!=NUM_SUITS){
+  for(int i =index+1;i<hand->n_cards;i++){
+    if ((*((*hand).cards[i])).value==5&&helper2(hand,i,fs)==4){
+      return 0;
+    }
+  }
+  }
   return -1;
 }
 
@@ -142,9 +149,9 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
       return 1;
     }
   }
-  if (fs!=NUM_SUITS&&(*((*hand).cards[index])).value==5&&(*((*hand).cards[index])).suit==fs){
-    int i = helper2(hand,index,fs);
-    if (i==4&&contains_req_ace(hand,fs)==0){
+  if (fs!=NUM_SUITS&&(*((*hand).cards[index])).value==14&&(*((*hand).cards[index])).suit==fs){
+    int i = check_ace_low(hand,index,fs);
+    if (i==0){
       return -1;
     }
   }
