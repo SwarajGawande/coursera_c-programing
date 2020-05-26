@@ -71,9 +71,9 @@ int helper1(deck_t *hand,size_t index){
       i=i+1;
       continue;
     }
-    if(j==4&&(*((*hand).cards[0])).value==14&&(*((*hand).cards[i])).value==2){
-      return -1;
-    }
+    //if(j==4&&(*((*hand).cards[0])).value==14&&(*((*hand).cards[i])).value==2){
+      //return -1;
+      //}
     return j;
   }
   return j;
@@ -105,9 +105,9 @@ int helper2(deck_t *hand,size_t index,suit_t fs){
       i=i+1;
       continue;
     }
-    if(j==4&&contains_req_ace(hand,fs)==0&&(*((*hand).cards[i])).value==2){
-      return -1;
-    }
+    //if(j==4&&contains_req_ace(hand,fs)==0&&(*((*hand).cards[i])).value==2){
+      //return -1;
+      //}
     return j;
   }
   return j;
@@ -122,7 +122,7 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
   }
   if (fs==NUM_SUITS&&(*((*hand).cards[index])).value==5){                
     int i= helper1(hand,index);
-    if (i==-1){
+    if (i==4&&(*((*hand).cards[0])).value==14){
     return -1;
     }
   }
@@ -134,7 +134,7 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
   }
   if (fs!=NUM_SUITS&&(*((*hand).cards[index])).value==5&&(*((*hand).cards[index])).suit==fs){
     int i = helper2(hand,index,fs);
-    if (i==-1){
+    if (i==4&&contains_req_ace(hand,fs)==0){
       return -1;
     }
   }
