@@ -1,4 +1,4 @@
-Grading at Thu May 14 09:29:51 UTC 2020
+Grading at Tue May 26 04:30:42 UTC 2020
 Attempting to compile test.c
 gcc -o test -Wall -Werror -pedantic -std=gnu99 -fsanitize=address test.c
 compiled
