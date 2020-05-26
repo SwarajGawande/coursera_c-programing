@@ -61,7 +61,7 @@ ssize_t  find_secondary_pair(deck_t * hand, unsigned * match_counts, size_t matc
 int helper1(deck_t *hand,size_t index){
   int i= index;
   int j=1;
-  while (i<hand->n_cards&&j<6){
+  while (i+1<hand->n_cards&&j<6){
     if ((*((*hand).cards[i])).value==((*((*hand).cards[i+1])).value)){
       i=i+1;
       continue;
@@ -90,7 +90,7 @@ int contains_req_ace(deck_t *hand,suit_t fs){
 int helper2(deck_t *hand,size_t index,suit_t fs){
   int i= index;
   int j=1;
-  while (i<hand->n_cards&&j<6){
+  while (i+1<hand->n_cards&&j<6){
     if ((*((*hand).cards[i])).value==((*((*hand).cards[i+1])).value)){
       if((*((*hand).cards[i+1])).suit==fs){
 	j=j+1;
@@ -128,7 +128,7 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
   }
   if (fs!=NUM_SUITS&&(*((*hand).cards[index])).suit==fs){
     int i = helper2(hand,index,fs);
-    if (i>=index+4){
+    if (i>=5){
       return 1;
     }
   }
