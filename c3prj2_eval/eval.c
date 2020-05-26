@@ -112,7 +112,7 @@ int helper2(deck_t *hand,size_t index,suit_t fs){
   }
   return j;
 }
-int check_ace_low(deck*hand,size_t index,suit_t fs){
+int check_ace_low(deck_t *hand,size_t index,suit_t fs){
   if (fs==NUM_SUITS){
   for(int i =index+1;i<hand->n_cards;i++){
     if ((*((*hand).cards[i])).value==5&&helper1(hand,i)==4){
