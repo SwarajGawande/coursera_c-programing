@@ -16,7 +16,7 @@ size_t find_max(int * array){
 void decryptor(FILE *f){
   int array[26]={0};
   int c;
-  long int j=0;
+  long long int j=0;
   while((c=fgetc(f))!=EOF){
     if (isalpha(c)){
       c=c-'a';
