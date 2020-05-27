@@ -26,14 +26,14 @@ void decryptor(FILE *f){
   }
   size_t i=find_max(array);
   //printf("%d ",array[i]);
-  if(((array[i]*100)/j)>8){
+  // if(((array[i]*100)/j)>8){
     if(i>=4){
       printf("%zu\n",i-4);
     }
     if(i<4&&i>=0){
       printf("%zu\n",i+22);
     }
-  }
+    //}
   else{
   printf("data not appropriate for decryption\n");
   }
