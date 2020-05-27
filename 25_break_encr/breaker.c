@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-size_t find_max(int * array){
+size_t find_max(long int * array){
   size_t max =0;
   for (int i=0;i<26;i++){
     if(array[max]<array[i]){
@@ -14,7 +14,7 @@ size_t find_max(int * array){
 }
 
 void decryptor(FILE *f){
-  int array[26]={0};
+  long int array[26]={0};
   int c;
   long long int j=0;
   while((c=fgetc(f))!=EOF){
