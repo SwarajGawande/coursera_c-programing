@@ -26,7 +26,7 @@ void decryptor(FILE *f){
   }
   size_t i=find_max(array);
   //printf("%d ",array[i]);
-  if(((array[i]*100)/j)>9){
+  if(((array[i]*100)/j)>8){
     if(i>=4){
       printf("%zu\n",i-4);
     }
