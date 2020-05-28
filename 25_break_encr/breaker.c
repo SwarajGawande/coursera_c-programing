@@ -16,12 +16,12 @@ size_t find_max(long int * array){
 void decryptor(FILE *f){
   long int array[26]={0};
   int c;
-  long long int j=0;
+  //long long int j=0;
   while((c=fgetc(f))!=EOF){
     if (isalpha(c)){
       c=c-'a';
       array[c]++;
-      j++;
+      // j++;
     }
   }
   size_t i=find_max(array);
@@ -34,9 +34,9 @@ void decryptor(FILE *f){
       printf("%zu\n",i+22);
     }
     //}
-  else{
-  printf("data not appropriate for decryption\n");
-  }
+    // else{
+    //printf("data not appropriate for decryption\n");
+  //}
 }
 
     
