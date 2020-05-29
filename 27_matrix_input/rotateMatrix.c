@@ -34,16 +34,16 @@ int main(int argc,char **argv){
   char array[10][10];
   int c;
   for (int i=0;i<10;i++){
-    for (int j=0;j<10;j++){
+    for (int j=0;j<11;j++){
       c=fgetc(f);
-      if (c==EOF){
+      if (c==EOF&&i!=9&&j!=10){
 	printf("executin finished");
 	return EXIT_FAILURE;
       }
-      if(c!='\n'){
+      if(c=='\n'&&j!=10){
 	printf("invalid input");
 	return EXIT_FAILURE;
-	}
+      }
       if (j<10){
 	array[i][j]=c;
       }
