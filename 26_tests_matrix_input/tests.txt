@@ -1,0 +1,13 @@
+input1.txt
+&sn;alNd
+input2.txt
+arg[1] arg[2]
+input3.txt
+inputnull.txt
+input4.txt
+input5.txt
+input6.txt
+usehex.txt
+input7.txt
+empty.txt
+
