@@ -28,7 +28,7 @@ int main(int argc,char **argv){
   }
   FILE* f = fopen(argv[1],"r");
   if (f==NULL){
-    perror("Inavalid file\n");
+    perror("Inavalid file");
     return EXIT_FAILURE;
   }
   char array[10][10];
@@ -37,11 +37,11 @@ int main(int argc,char **argv){
     for (int j=0;j<11;j++){
       c=fgetc(f);
       if (c==EOF){
-	printf("executin finished");
+	printf("executin finished\n");
 	return EXIT_FAILURE;
       }
       if(c=='\n'&&j!=10){
-	printf("invalid input");
+	printf("invalid input\n");
 	return EXIT_FAILURE;
       }
       if (j<10){
@@ -50,7 +50,7 @@ int main(int argc,char **argv){
     }
   }
   if ((c=fgetc(f))!=EOF){
-    printf("invalid input");
+    printf("invalid input\n");
     return EXIT_FAILURE;
   }
   rotate(array);
