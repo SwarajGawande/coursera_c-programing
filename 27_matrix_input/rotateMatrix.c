@@ -36,6 +36,11 @@ int main(int argc,char **argv){
   for (int i=0;i<10;i++){
     for (int j=0;j<11;j++){
       c=fgetc(f);
+      if(j==11){
+	if(c!=10){
+	  printf("invalid input");
+	}
+      }
       if (j<10){
 	array[i][j]=c;
       }
