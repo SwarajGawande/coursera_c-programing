@@ -1,4 +1,4 @@
-Grading at Fri May 29 14:46:05 UTC 2020
+Grading at Fri May 29 14:50:04 UTC 2020
 Attempting to compile rotateMatrix.c
 testcase1 passed
 #################################################
@@ -47,7 +47,9 @@ Your file matched the expected output
 testcase10 passed
 #################################################
 testcase10: eof.txt
-Your file matched the expected output
-testcase10 passed
+Line_1_did_not_match
+Your file did not match the expected ouput
+testcase10 failed, your output did not match with the answer
+ (Maybe you mishandled reading character 0xFF?)
 
 Overall Grade: F
