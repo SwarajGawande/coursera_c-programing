@@ -1,2 +1,2 @@
-rotatematrix:rotatematrix.c
-	gcc -o rotatematrix -Wall -Werror -pedantic -std=gnu99 rotatematrix.c 
+rotateMatrix:rotateMatrix.c
+	gcc -o rotateMatrix -Wall -Werror -pedantic -std=gnu99 rotateMatrix.c 
