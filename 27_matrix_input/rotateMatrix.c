@@ -44,7 +44,7 @@ int main(int argc,char **argv){
 	printf("invalid input");
 	return EXIT_FAILURE;
 	}
-      if (j<10&c!='\n'){
+      if (j<10){
 	array[i][j]=c;
       }
     }
