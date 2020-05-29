@@ -36,7 +36,7 @@ int main(int argc,char **argv){
   for (int i=0;i<10;i++){
     for (int j=0;j<11;j++){
       c=fgetc(f);
-      if (c==EOF&&i!=9&&j!=10){
+      if (c==EOF){
 	printf("executin finished");
 	return EXIT_FAILURE;
       }
@@ -48,6 +48,10 @@ int main(int argc,char **argv){
 	array[i][j]=c;
       }
     }
+  }
+  if ((c=fgetc(f))!=EOF){
+    printf("invalid input");
+    return EXIT_FAILURE;
   }
   rotate(array);
   if (fclose(f)!=0){
