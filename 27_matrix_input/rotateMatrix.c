@@ -36,12 +36,12 @@ int main(int argc,char **argv){
   for (int i=0;i<10;i++){
     for (int j=0;j<11;j++){
       c=fgetc(f);
-      if (c==255){
+      if (c==EOF){
 	printf("executin finished");
 	return EXIT_FAILURE;
       }
       if(j==11){
-	if(c!=10){
+	if(c!='\n'){
 	  printf("invalid input");
 	  return EXIT_FAILURE;
 	}
