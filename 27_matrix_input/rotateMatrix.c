@@ -34,19 +34,17 @@ int main(int argc,char **argv){
   char array[10][10];
   int c;
   for (int i=0;i<10;i++){
-    for (int j=0;j<11;j++){
+    for (int j=0;j<10;j++){
       c=fgetc(f);
       if (c==EOF){
 	printf("executin finished");
 	return EXIT_FAILURE;
       }
-      if(j==11){
-	if(c!='\n'){
-	  printf("invalid input");
-	  return EXIT_FAILURE;
+      if(c!='\n'){
+	printf("invalid input");
+	return EXIT_FAILURE;
 	}
-      }
-      if (j<10){
+      if (j<10&c!='\n'){
 	array[i][j]=c;
       }
     }
