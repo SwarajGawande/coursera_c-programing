@@ -50,7 +50,7 @@ int main(int argc,char **argv){
     }
   }
   if ((c=fgetc(f))!=EOF){
-    fprintf("invalid input\n");
+    fprintf(stderr,"invalid input\n");
     return EXIT_FAILURE;
   }
   rotate(array);
