@@ -46,6 +46,7 @@ int main(int argc,char **argv){
       }
       if(c!='\n'&&j==10){
 	fprintf(stderr,"invalid input");
+	return EXIT_FAILURE;
       }
       if (j<10&&c!='\n'){
 	array[i][j]=c;
