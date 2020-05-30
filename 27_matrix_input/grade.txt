@@ -1,4 +1,4 @@
-Grading at Sat May 30 03:07:13 UTC 2020
+Grading at Sat May 30 03:10:53 UTC 2020
 Attempting to compile rotateMatrix.c
 testcase1 passed
 #################################################
@@ -28,7 +28,7 @@ testcase7 passed
 #################################################
 testcase8: long-line-2.txt
  (should indicate an error)
-testcase8 failed, your program didn't indicate this is a failure case
+testcase8 passed
 #################################################
 testcase9: normal1.txt normal2.txt
  (should indicate an error)
@@ -50,4 +50,4 @@ testcase10: eof.txt
 Your file matched the expected output
 testcase10 passed
 
-Overall Grade: B
+Overall Grade: A
