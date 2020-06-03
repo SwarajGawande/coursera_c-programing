@@ -46,7 +46,7 @@ int main(int argc, char ** argv) {
     for (int j=1;j<argc;j++){
      FILE *f=fopen(argv[j],"r");
      if(f==NULL){
-       fprintf(stderr,"could not open file");
+       fprintf(stderr,"could not open file\n");
      }
      char*line=NULL;
      size_t sz=0;
