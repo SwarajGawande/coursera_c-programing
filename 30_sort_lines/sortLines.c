@@ -47,6 +47,7 @@ int main(int argc, char ** argv) {
      FILE *f=fopen(argv[j],"r");
      if(f==NULL){
        fprintf(stderr,"could not open file\n");
+       return EXIT_FAILURE;
      }
      char*line=NULL;
      size_t sz=0;
