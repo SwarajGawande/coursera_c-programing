@@ -119,6 +119,7 @@ int countMines(board_t * b, int x, int y) {
   int x1=x-1;
   int y1=y-1;
   int count=0;
+  //if(x>0&&y>0&&x+1<b->width&&y+1<b->height){
   for (int i=0;i<9;i++){
     int a=x1+i/3;
     int c=y1+i%3;
@@ -128,8 +129,11 @@ int countMines(board_t * b, int x, int y) {
     if(a==x&&c==y){
       continue;
     }
-    count++;
+    if(IS_MINE((*b).board[c][a])){
+      count++;
+    }
   }
+  
   return count;
 }
 int click (board_t * b, int x, int y) {
