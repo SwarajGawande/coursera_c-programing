@@ -126,9 +126,9 @@ int countMines(board_t * b, int x, int y) {
     if(a<0||a>=b->width||c<0||c>=b->height){
       continue;
     }
-    /*if(a==x&&c==y){
+    if(a==x&&c==y){
       continue;
-    }*/
+    }
     if(IS_MINE((*b).board[c][a])){
       count++;
     }
@@ -160,11 +160,11 @@ int checkWin(board_t * b) {
   for (int i=0;i<b->height;i++){
     for (int j=0;j<b->width;j++){
       if((*b).board[i][j]==UNKNOWN){
-	return 1;
+	return 0;
       }
     }
   }
-  return 0;
+  return 1;
 }
 
 void freeBoard(board_t * b) {
