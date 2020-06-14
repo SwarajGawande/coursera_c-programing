@@ -20,6 +20,7 @@ kvarray_t * readKVs(const char * fname) {
   size_t j=0;
   size_t diff;
   while((len=getline(&line,&sz,f))>0){
+    diff=0;
     (*temp).array=realloc((*temp).array,(j+1)*sizeof(*(*temp).array));
     temp->numPairs=j+1;
     for(int i=0;i<len;i++){
@@ -37,7 +38,14 @@ kvarray_t * readKVs(const char * fname) {
     for(int i=diff+1;i<len;i++){
       ((*temp).array[j]).value[i-diff-1]=line[i];
     }
+    if(diff<len-1){
     ((*temp).array[j]).value[len-diff-2]='\0';
+    }
+    else{
+      free(((*temp).array[j]).value);
+      ((*temp).array[j]).value=malloc(sizeof(*((*temp).array[j]).value));
+      ((*temp).array[j]).value[0]='\0';
+    }
     j++;
     free(line);
     line=NULL;
