@@ -29,6 +29,10 @@ kvarray_t * readKVs(const char * fname) {
 	break;
       }
     }
+    if(len==1){
+      ((*temp).array[j]).key=NULL;
+      ((*temp).array[j]).value=NULL;
+    }
     ((*temp).array[j]).key=malloc((diff+1)*sizeof(*((*temp).array[j]).key));
     for(int i=0;i<diff;i++){
       ((*temp).array[j]).key[i]=line[i];
