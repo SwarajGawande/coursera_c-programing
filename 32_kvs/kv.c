@@ -13,25 +13,31 @@ kvarray_t * readKVs(const char * fname) {
   FILE* f=fopen(fname,"r");
   if(f==NULL){
     fprintf(stderr,"unable to open file");
+    return NULL;
   }
   char* line=NULL;
   size_t sz=0;
   ssize_t len;
   size_t j=0;
   //size_t diff;
-  while((len=getline(&line,&sz,f))>=0){
+  while((len=getline(&line,&sz,f))>0){
     //diff=0;
-    (*temp).array=realloc((*temp).array,(j+1)*sizeof(*(*temp).array));
-    temp->numPairs=j+1;
-    line[len-1]='\0';
     char *p=strchr(line,'=');
-    if(len==1){
+    /*if(len==1&&p!=NULL){
+      ((*temp).array[j]).key=malloc(sizeof(*((*temp).array[j]).key));
       ((*temp).array[j]).key=NULL;
+      ((*temp).array[j]).value=malloc(sizeof(*((*temp).array[j]).value));
       ((*temp).array[j]).value=NULL;
-    }
+    }*/
     if(p==NULL){
       fprintf(stderr,"no '=' in string %s\n",line);
       continue;
+    }
+    (*temp).array=realloc((*temp).array,(j+1)*sizeof(*(*temp).array));
+    temp->numPairs=j+1;
+    char* end=strchr(line,'\n');
+    if(end!=NULL){
+      *end='\0';
     }
     *p='\0';
     p++;
