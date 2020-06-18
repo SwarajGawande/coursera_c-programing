@@ -35,13 +35,14 @@ kvarray_t * readKVs(const char * fname) {
     }
     (*temp).array=realloc((*temp).array,(j+1)*sizeof(*(*temp).array));
     temp->numPairs=j+1;
+    kvpair_t *pair=malloc(sizeof(*pair));
     char* end=strchr(line,'\n');
     if(end!=NULL){
       *end='\0';
     }
     *p='\0';
     p++;
-    ((*temp).array[j]).key=line;
+    (*pair).key=line;
     /*for(int i=0;i<diff;i++){
       ((*temp).array[j]).key[i]=line[i];
     }
@@ -58,7 +59,8 @@ kvarray_t * readKVs(const char * fname) {
       ((*temp).array[j]).value=malloc(sizeof(*((*temp).array[j]).value));
       ((*temp).array[j]).value[0]='\0';
       }*/
-    ((*temp).array[j]).value=p;
+    pair->value=p;
+    (*temp).array[j]=pair;
     j++;
     line=NULL;
   }
@@ -70,8 +72,8 @@ kvarray_t * readKVs(const char * fname) {
 void freeKVs(kvarray_t * pairs) {
   //WRITE ME
   for(int i=0;i<pairs->numPairs;i++){
-    free(((*pairs).array[i]).key);
-    //free(((*pairs).array[i]).value);
+    free((*((*pairs).array[i])).key);
+    free((*pairs).array[i]);
   }
   free((*pairs).array);
   free(pairs);
@@ -80,18 +82,15 @@ void freeKVs(kvarray_t * pairs) {
 void printKVs(kvarray_t * pairs) {
   //WRITE ME
   for(int i=0;i<pairs->numPairs;i++){
-    printf("key  = '%s' value = '%s'\n",((*pairs).array[i]).key,((*pairs).array[i]).value);
+    printf("key  = '%s' value = '%s'\n",(*((*pairs).array[i])).key,(*((*pairs).array[i])).value);
   }
 }
 
 char * lookupValue(kvarray_t * pairs, const char * key) {
   //WRITE ME
   for(int i=0;i<pairs->numPairs;i++){
-    if(((*pairs).array[i]).key==NULL){
-    return NULL;
-  }
-    if(strcmp(((*pairs).array[i]).key,key)==0){
-      return ((*pairs).array[i]).value;
+    if(strcmp((*((*pairs).array[i])).key,key)==0){
+      return ((*(*pairs).array[i])).value;
     }
   }
   return NULL;
