@@ -7,14 +7,15 @@
 
 kvarray_t * readKVs(const char * fname) {
   //WRITE ME
-  kvarray_t* temp=malloc(sizeof(*temp));
-  (*temp).array=malloc(sizeof(*(*temp).array));
-  temp->numPairs=1;
   FILE* f=fopen(fname,"r");
   if(f==NULL){
     fprintf(stderr,"unable to open file");
     return NULL;
   }
+  kvarray_t* temp=malloc(sizeof(*temp));
+  (*temp).array=malloc(sizeof(*(*temp).array));
+  temp->array=NULL;
+  temp->numPairs=0;
   char* line=NULL;
   size_t sz=0;
   ssize_t len;
