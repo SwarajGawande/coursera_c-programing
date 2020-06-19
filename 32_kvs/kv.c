@@ -32,6 +32,8 @@ kvarray_t * readKVs(const char * fname) {
     }*/
     if(p==NULL){
       fprintf(stderr,"no '=' in string %s\n",line);
+      free(line);
+      line=NULL;
       continue;
     }
     (*temp).array=realloc((*temp).array,(j+1)*sizeof(*(*temp).array));
