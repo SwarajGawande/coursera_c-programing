@@ -13,7 +13,6 @@ kvarray_t * readKVs(const char * fname) {
     return NULL;
   }
   kvarray_t* temp=malloc(sizeof(*temp));
-  (*temp).array=malloc(sizeof(*(*temp).array));
   temp->array=NULL;
   temp->numPairs=0;
   char* line=NULL;
