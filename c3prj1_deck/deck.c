@@ -71,6 +71,7 @@ deck_t * make_deck_exclude(deck_t * excluded_cards){
       card_t *card=malloc(sizeof(*card));
       card->value=c.value;
       card->suit=c.suit;
+      (*spdeck).cards[spdeck->n_cards]=card;
       spdeck->n_cards++;
     }
   }
