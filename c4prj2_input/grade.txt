@@ -1,17 +1,12 @@
-Grading at Thu Jun 25 05:32:36 UTC 2020
+Grading at Thu Jun 25 05:36:16 UTC 2020
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 input.c: In function ‘hand_from_string’:
-input.c:23:7: error: ‘n_cards’ undeclared (first use in this function)
-       n_cards++;
-       ^
-input.c:23:7: note: each undeclared identifier is reported only once for each function it appears in
-input.c: In function ‘read_input’:
-input.c:47:5: error: value computed is not used [-Werror=unused-value]
-     *n_hands++;
-     ^
-cc1: all warnings being treated as errors
+input.c:31:19: error: ‘n_cards’ undeclared (first use in this function)
+     (*hand).cards[n_cards]=card;
+                   ^
+input.c:31:19: note: each undeclared identifier is reported only once for each function it appears in
 Compilation of input.c failed
 
 Overall Grade: F
