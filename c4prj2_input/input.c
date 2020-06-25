@@ -20,7 +20,7 @@ deck_t * hand_from_string(const char*str,future_cards_t *fc){
       hand->cards=realloc(hand->cards,(hand->n_cards+1)*sizeof(*hand->cards));
       card_t * ptr=add_empty_card(hand);
       add_future_card(fc,n,ptr);
-      n_cards++;
+      hand->n_cards++;
       i=i+2+n/10;
     }
     hand->cards=realloc(hand->cards,(hand->n_cards+1)*sizeof(*hand->cards));
@@ -29,7 +29,7 @@ deck_t * hand_from_string(const char*str,future_cards_t *fc){
     card->value=c.value;
     card->suit=c.suit;
     (*hand).cards[n_cards]=card;
-    n_cards++;
+    hand->n_cards++;
     i=i+2;
   }
   return hand;
@@ -39,13 +39,14 @@ deck_t ** read_input(FILE * f,size_t * n_hands,future_cards_t *fc){
   char*line=NULL;
   size_t sz=0;
   ssize_t len;
-  *n_hands=0;
+  size_t  i=0;
   deck_t ** array=NULL;
   while((len=getline(&line,&sz,f))>=0){
-    array=realloc(array,(*n_hands+1)*sizeof(*array));
-    array[*n_hands]=hand_from_string(line,fc);
-    *n_hands++;
+    array=realloc(array,(i+1)*sizeof(*array));
+    array[i]=hand_from_string(line,fc);
+    i++;
   }
+  *n_hands=i;
   if(*n_hands<5){
     fprintf(stderr,"hand size too small\n");
     exit(EXIT_FAILURE);
