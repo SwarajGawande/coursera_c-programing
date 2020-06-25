@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
-
+#include "cards.h"
+#include "deck.h"
+#include "future.h"
 
 void add_future_card(future_card_t *fc,size_t index,card_t * ptr){
   fc->decks=realloc(fc->decks,(index+1)*sizeof(*fc->decks));
