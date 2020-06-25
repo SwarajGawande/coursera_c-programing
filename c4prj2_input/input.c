@@ -45,7 +45,10 @@ deck_t ** read_input(FILE * f,size_t * n_hands,future_cards_t *fc){
     array=realloc(array,(i+1)*sizeof(*array));
     array[i]=hand_from_string(line,fc);
     i++;
+    free(line);
+    line=NULL;
   }
+  free(line);
   *n_hands=i;
   if(*n_hands<5){
     fprintf(stderr,"hand size too small\n");
