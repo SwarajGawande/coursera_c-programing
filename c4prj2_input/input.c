@@ -28,7 +28,7 @@ deck_t * hand_from_string(const char*str,future_cards_t *fc){
     card_t c=card_from_letters(str[i],str[i+1]);
     card->value=c.value;
     card->suit=c.suit;
-    (*hand).cards[n_cards]=card;
+    (*hand).cards[hand->n_cards]=card;
     hand->n_cards++;
     i=i+2;
   }
