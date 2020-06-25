@@ -1,9 +1,19 @@
-Grading at Thu Jun 25 05:26:19 UTC 2020
+Grading at Thu Jun 25 05:28:22 UTC 2020
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
-input.c:1:19: fatal error: input.h: No such file or directory
-compilation terminated.
+input.c:4:1: error: unknown type name ‘deck_t’
+ deck_t * hand_from_string(const char*str,future_cards_t *fc){
+ ^
+input.c:4:42: error: unknown type name ‘future_cards_t’
+ deck_t * hand_from_string(const char*str,future_cards_t *fc){
+                                          ^
+input.c:34:1: error: unknown type name ‘deck_t’
+ deck_t ** read_input(FILE * f,size_t * n_hands,future_cards_t *fc){
+ ^
+input.c:34:48: error: unknown type name ‘future_cards_t’
+ deck_t ** read_input(FILE * f,size_t * n_hands,future_cards_t *fc){
+                                                ^
 Compilation of input.c failed
 
 Overall Grade: F
