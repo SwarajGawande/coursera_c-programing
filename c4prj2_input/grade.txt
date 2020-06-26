@@ -1,4 +1,4 @@
-Grading at Fri Jun 26 04:27:52 UTC 2020
+Grading at Fri Jun 26 04:38:23 UTC 2020
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
@@ -17,97 +17,62 @@ Test case passed
 Testing with input file with 
  o Many hands
  o 1 unknown/future cards per hand
-Valgrind reported errors:
-==1809== Memcheck, a memory error detector
-==1809== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==1809== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==1809== Command: ./tester h.txt d.txt
-==1809== Parent PID: 1808
-==1809== 
-==1809== Invalid read of size 8
-==1809==    at 0x401160: print_hand (in /graderhome/work/c4prj2_input/tester)
-==1809==    by 0x401E5E: main (test-input.c:84)
-==1809==  Address 0x52058f8 is 0 bytes after a block of size 56 alloc'd
-==1809==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1809==    by 0x40147D: add_empty_card (in /graderhome/work/c4prj2_input/tester)
-==1809==    by 0x400B72: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==1809==    by 0x400D74: read_input (in /graderhome/work/c4prj2_input/tester)
-==1809==    by 0x401D43: main (test-input.c:69)
-==1809== 
-==1809== Invalid read of size 8
-==1809==    at 0x401163: print_hand (in /graderhome/work/c4prj2_input/tester)
-==1809==    by 0x401E5E: main (test-input.c:84)
-==1809==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==1809== 
-==1809== 
-==1809== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==1809==  Access not within mapped region at address 0x0
-==1809==    at 0x401163: print_hand (in /graderhome/work/c4prj2_input/tester)
-==1809==    by 0x401E5E: main (test-input.c:84)
-==1809==  If you believe this happened as a result of a stack
-==1809==  overflow in your program's main thread (unlikely but
-==1809==  possible), you can try to increase the size of the
-==1809==  main thread stack using the --main-stacksize= flag.
-==1809==  The main thread stack size used in this run was 8388608.
-==1809== 
-==1809== HEAP SUMMARY:
-==1809==     in use at exit: 992 bytes in 67 blocks
-==1809==   total heap usage: 123 allocs, 56 frees, 16,160 bytes allocated
-==1809== 
-==1809== LEAK SUMMARY:
-==1809==    definitely lost: 0 bytes in 0 blocks
-==1809==    indirectly lost: 0 bytes in 0 blocks
-==1809==      possibly lost: 0 bytes in 0 blocks
-==1809==    still reachable: 992 bytes in 67 blocks
-==1809==         suppressed: 0 bytes in 0 blocks
-==1809== Rerun with --leak-check=full to see details of leaked memory
-==1809== 
-==1809== For counts of detected and suppressed errors, rerun with: -v
-==1809== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+Line_3_did_not_match
+Line_4_did_not_match
+Line_5_did_not_match
+Line_7_did_not_match
+Line_8_did_not_match
+Line_9_did_not_match
+Line_10_did_not_match
+Line_12_did_not_match
+Line_13_did_not_match
+Line_14_did_not_match
+Line_15_did_not_match
+Line_17_did_not_match
+Line_18_did_not_match
+Line_19_did_not_match
+Line_20_did_not_match
+Your file did not match the expected ouput
+Test case failed
 Testing with input file with 
  o Many hands
  o Many unknown/future cards per hand
-Valgrind reported errors:
-==1815== Memcheck, a memory error detector
-==1815== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==1815== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==1815== Command: ./tester i1 i2
-==1815== Parent PID: 1814
-==1815== 
-==1815== Use of uninitialised value of size 8
-==1815==    at 0x401163: print_hand (in /graderhome/work/c4prj2_input/tester)
-==1815==    by 0x401E5E: main (test-input.c:84)
-==1815== 
-==1815== Invalid read of size 8
-==1815==    at 0x401163: print_hand (in /graderhome/work/c4prj2_input/tester)
-==1815==    by 0x401E5E: main (test-input.c:84)
-==1815==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==1815== 
-==1815== 
-==1815== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==1815==  Access not within mapped region at address 0x0
-==1815==    at 0x401163: print_hand (in /graderhome/work/c4prj2_input/tester)
-==1815==    by 0x401E5E: main (test-input.c:84)
-==1815==  If you believe this happened as a result of a stack
-==1815==  overflow in your program's main thread (unlikely but
-==1815==  possible), you can try to increase the size of the
-==1815==  main thread stack using the --main-stacksize= flag.
-==1815==  The main thread stack size used in this run was 8388608.
-==1815== 
-==1815== HEAP SUMMARY:
-==1815==     in use at exit: 2,728 bytes in 153 blocks
-==1815==   total heap usage: 306 allocs, 153 frees, 23,136 bytes allocated
-==1815== 
-==1815== LEAK SUMMARY:
-==1815==    definitely lost: 0 bytes in 0 blocks
-==1815==    indirectly lost: 0 bytes in 0 blocks
-==1815==      possibly lost: 0 bytes in 0 blocks
-==1815==    still reachable: 2,728 bytes in 153 blocks
-==1815==         suppressed: 0 bytes in 0 blocks
-==1815== Rerun with --leak-check=full to see details of leaked memory
-==1815== 
-==1815== For counts of detected and suppressed errors, rerun with: -v
-==1815== Use --track-origins=yes to see where uninitialised values come from
-==1815== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+Line_2_did_not_match
+Line_3_did_not_match
+Line_4_did_not_match
+Line_5_did_not_match
+Line_6_did_not_match
+Line_7_did_not_match
+Line_9_did_not_match
+Line_10_did_not_match
+Line_11_did_not_match
+Line_12_did_not_match
+Line_13_did_not_match
+Line_14_did_not_match
+Line_16_did_not_match
+Line_17_did_not_match
+Line_18_did_not_match
+Line_20_did_not_match
+Line_21_did_not_match
+Line_23_did_not_match
+Line_24_did_not_match
+Line_25_did_not_match
+Line_26_did_not_match
+Line_27_did_not_match
+Line_28_did_not_match
+Line_30_did_not_match
+Line_31_did_not_match
+Line_32_did_not_match
+Line_33_did_not_match
+Line_34_did_not_match
+Line_35_did_not_match
+Line_37_did_not_match
+Line_38_did_not_match
+Line_39_did_not_match
+Line_40_did_not_match
+Line_41_did_not_match
+Line_42_did_not_match
+Your file did not match the expected ouput
+Test case failed
 
 Overall Grade: C
