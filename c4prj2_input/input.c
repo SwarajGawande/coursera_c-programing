@@ -10,7 +10,8 @@ deck_t * hand_from_string(const char*str,future_cards_t *fc){
   hand->cards=NULL;
   hand->n_cards=0;
   int i=0;
-  while(str[i]!='\n'){
+  size_t len=strlen(str);
+  while(i<len){
     if(str[i]==' '){
       i++;
       continue;
@@ -22,6 +23,7 @@ deck_t * hand_from_string(const char*str,future_cards_t *fc){
       add_future_card(fc,n,ptr);
       hand->n_cards++;
       i=i+2+n/10;
+      continue;
     }
     hand->cards=realloc(hand->cards,(hand->n_cards+1)*sizeof(*hand->cards));
     card_t * card=malloc(sizeof(*card));
