@@ -21,7 +21,7 @@ deck_t * hand_from_string(const char*str,future_cards_t *fc){
       //hand->cards=realloc(hand->cards,(hand->n_cards+1)*sizeof(*hand->cards));
       card_t * ptr=add_empty_card(hand);
       add_future_card(fc,n,ptr);
-      hand->n_cards++;
+      //hand->n_cards++;
       i=i+2+n/10;
       continue;
     }
