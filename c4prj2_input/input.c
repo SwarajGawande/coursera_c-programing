@@ -34,6 +34,10 @@ deck_t * hand_from_string(const char*str,future_cards_t *fc){
     hand->n_cards++;
     i=i+2;
   }
+  if(hand->n_cards<5){
+    fprintf(stderr,"hand size too small\n");
+    exit(EXIT_FAILURE);
+  }
   return hand;
 }
 
@@ -52,9 +56,9 @@ deck_t ** read_input(FILE * f,size_t * n_hands,future_cards_t *fc){
   }
   free(line);
   *n_hands=i;
-  if(*n_hands<5){
+  /*if(*n_hands<5){
     fprintf(stderr,"hand size too small\n");
     exit(EXIT_FAILURE);
-  }
+    }*/
   return array;
 }
