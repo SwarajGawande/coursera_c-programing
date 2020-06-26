@@ -18,7 +18,7 @@ deck_t * hand_from_string(const char*str,future_cards_t *fc){
     }
     if(str[i]=='?'){
       int n=atoi(&str[i+1]);
-      hand->cards=realloc(hand->cards,(hand->n_cards+1)*sizeof(*hand->cards));
+      //hand->cards=realloc(hand->cards,(hand->n_cards+1)*sizeof(*hand->cards));
       card_t * ptr=add_empty_card(hand);
       add_future_card(fc,n,ptr);
       hand->n_cards++;
