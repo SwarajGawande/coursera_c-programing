@@ -16,7 +16,8 @@ deck_t * hand_from_string(const char*str,future_cards_t *fc){
       i++;
       continue;
     }
-    if(str[i]=='?'){
+    else if(str[i]=='?'){
+      i++;
       int j=0;
       char num[len];
       while(str[i]!='\0'&&str[i]!=' '){
@@ -24,14 +25,16 @@ deck_t * hand_from_string(const char*str,future_cards_t *fc){
 	i++;
 	j++;
       }
+      num[j]='\0';
       size_t n=atoi(num);
       //hand->cards=realloc(hand->cards,(hand->n_cards+1)*sizeof(*hand->cards));
       card_t * ptr=add_empty_card(hand);
       add_future_card(fc,n,ptr);
       //hand->n_cards++;
-      i=i+2+n/10;
+      i=i+j;
       continue;
     }
+    else{
     hand->cards=realloc(hand->cards,(hand->n_cards+1)*sizeof(*hand->cards));
     card_t * card=malloc(sizeof(*card));
     card_t c=card_from_letters(str[i],str[i+1]);
@@ -40,6 +43,7 @@ deck_t * hand_from_string(const char*str,future_cards_t *fc){
     (*hand).cards[hand->n_cards]=card;
     hand->n_cards++;
     i=i+2;
+    }
   }
   if(hand->n_cards<5){
     fprintf(stderr,"hand size too small\n");
