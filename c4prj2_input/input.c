@@ -12,7 +12,7 @@ deck_t * hand_from_string(const char*str,future_cards_t *fc){
   int i=0;
   size_t len=strlen(str);
   while(i<len){
-    if(str[i]==' '){
+    if(str[i]==' '||str[i]=='\n'){
       i++;
       continue;
     }
@@ -20,7 +20,7 @@ deck_t * hand_from_string(const char*str,future_cards_t *fc){
       i++;
       int j=0;
       char num[len];
-      while(str[i]!='\0'&&str[i]!=' '){
+      while(str[i]!='\n'&&str[i]!=' '){
 	num[j]=str[i];
 	i++;
 	j++;
@@ -31,7 +31,6 @@ deck_t * hand_from_string(const char*str,future_cards_t *fc){
       card_t * ptr=add_empty_card(hand);
       add_future_card(fc,n,ptr);
       //hand->n_cards++;
-      i=i+j;
       continue;
     }
     else{
@@ -59,18 +58,14 @@ deck_t ** read_input(FILE * f,size_t * n_hands,future_cards_t *fc){
   size_t  i=0;
   deck_t ** array=NULL;
   while((len=getline(&line,&sz,f))>0){
-    line[len-1]='\0';
     array=realloc(array,(i+1)*sizeof(*array));
-    array[i]=hand_from_string(line,fc);
+    deck_t *deck=hand_from_string(line,fc);
+    array[i]=deck;
     i++;
     free(line);
     line=NULL;
   }
   free(line);
   *n_hands=i;
-  /*if(*n_hands<5){
-    fprintf(stderr,"hand size too small\n");
-    exit(EXIT_FAILURE);
-    }*/
   return array;
 }
