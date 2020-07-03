@@ -41,7 +41,7 @@ deck_t * hand_from_string(const char*str,future_cards_t *fc){
     card->suit=c.suit;
     (*hand).cards[hand->n_cards]=card;
     hand->n_cards++;
-    i++;
+    i=i+2;
     }
   }
   if(hand->n_cards<5){
